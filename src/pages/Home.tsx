@@ -126,7 +126,7 @@ export default function Home() {
       </section>
 
       {/* Brochure Download Section */}
-      <section className="section wave-divider" style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', color: 'white', position: 'relative', overflow: 'hidden' }}>
+      <section className="section" style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', color: 'white', position: 'relative', overflow: 'hidden' }}>
         <Particles count={15} colors={['rgba(255,255,255,0.15)', 'rgba(255,255,255,0.1)']} />
         <div className="container reveal" style={{ textAlign: 'center', position: 'relative', zIndex: 2 }}>
           <h2 className="h2" style={{ marginBottom: '1.5rem' }}>Company Profile</h2>

@@ -25,7 +25,7 @@ export default function Footer() {
         <div>
           <h3 style={{ marginBottom: '1rem' }}>Contact</h3>
           <p style={{ opacity: 0.7, marginBottom: '0.5rem' }}>Nagpur & Pune</p>
-          <p style={{ opacity: 0.7 }}>+91 8208 567 560</p>
+          <p style={{ opacity: 0.7 }}>+91 9112006989</p>
         </div>
       </div>
       <div style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>

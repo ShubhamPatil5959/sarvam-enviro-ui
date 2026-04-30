@@ -15,14 +15,14 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Phone',
-      info: '+91 8208 567 560',
+      info: '+91 9112006989',
       color: 'var(--color-secondary)',
       delay: 't-delay-200'
     },
     {
       icon: Mail,
       title: 'Email',
-      info: 'info@sahyadrienviro.com (Placeholder)',
+      info: 'info@sahyadrienviro.com',
       color: 'var(--color-primary)',
       delay: 't-delay-300'
     }
