@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div ref={scrollRef} className="page-transition">
       {/* Hero Section */}
-      <section className="hero-section section" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', color: 'white', position: 'relative' }}>
+      <section className="hero-section section" style={{ minHeight: '100vh', marginTop: '-70px', paddingTop: '70px', display: 'flex', alignItems: 'center', color: 'white', position: 'relative' }}>
         {/* Background image */}
         <div className="hero-bg" style={{ backgroundImage: `url(${landingBg})` }} />
         {/* Overlay */}
