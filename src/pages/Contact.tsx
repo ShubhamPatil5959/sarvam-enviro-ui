@@ -1,46 +1,61 @@
-export default function Contact() {
-  return (
-    <div className="section container animate-fade-in">
-      <h1 className="h1 animate-slide-up" style={{ marginBottom: '3rem', textAlign: 'center' }}>Contact Us</h1>
-      
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'start' }}>
-        {/* Contact Info */}
-        <div className="animate-slide-up delay-100">
-          <h2 className="h2" style={{ marginBottom: '1.5rem' }}>Get in Touch</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div className="glass hover-lift" style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
-              <strong style={{ display: 'block', fontSize: '1.1rem', marginBottom: '0.25rem' }}>Office Locations</strong>
-              <p className="text-muted">Nagpur & Pune</p>
-            </div>
-            <div className="glass hover-lift" style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
-              <strong style={{ display: 'block', fontSize: '1.1rem', marginBottom: '0.25rem' }}>Phone</strong>
-              <p className="text-muted">+91 8208 567 560</p>
-            </div>
-            <div className="glass hover-lift" style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)' }}>
-              <strong style={{ display: 'block', fontSize: '1.1rem', marginBottom: '0.25rem' }}>Email</strong>
-              <p className="text-muted">info@sahyadrienviro.com (Placeholder)</p>
-            </div>
-          </div>
-        </div>
+import { MapPin, Phone, Mail } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useAnimations';
 
-        {/* Contact Form */}
-        <div className="glass hover-lift animate-slide-up delay-200" style={{ padding: '3rem', borderRadius: 'var(--radius-xl)' }}>
-          <h2 className="h2" style={{ marginBottom: '1.5rem' }}>Send a Message</h2>
-          <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div>
-              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Name</label>
-              <input type="text" placeholder="Your Name" style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', backgroundColor: 'rgba(255,255,255,0.5)', outline: 'none' }} />
-            </div>
-            <div>
-              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Email</label>
-              <input type="email" placeholder="Your Email" style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', backgroundColor: 'rgba(255,255,255,0.5)', outline: 'none' }} />
-            </div>
-            <div>
-              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Message</label>
-              <textarea placeholder="How can we help you?" rows={4} style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', backgroundColor: 'rgba(255,255,255,0.5)', outline: 'none' }} />
-            </div>
-            <button type="button" className="btn btn-primary">Send Message</button>
-          </form>
+export default function Contact() {
+  const scrollRef = useScrollReveal();
+
+  const contactCards = [
+    {
+      icon: MapPin,
+      title: 'Office Locations',
+      info: 'Nagpur & Pune',
+      color: 'var(--color-primary)',
+      delay: 't-delay-100'
+    },
+    {
+      icon: Phone,
+      title: 'Phone',
+      info: '+91 8208 567 560',
+      color: 'var(--color-secondary)',
+      delay: 't-delay-200'
+    },
+    {
+      icon: Mail,
+      title: 'Email',
+      info: 'info@sahyadrienviro.com (Placeholder)',
+      color: 'var(--color-primary)',
+      delay: 't-delay-300'
+    }
+  ];
+
+  return (
+    <div ref={scrollRef} className="section container page-transition">
+      <h1 className="h1 animate-blur-in" style={{ marginBottom: '1rem', textAlign: 'center' }}>
+        Contact <span className="text-gradient">Us</span>
+      </h1>
+      <p className="text-muted animate-blur-in delay-200" style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: '500px', margin: '0 auto 4rem', fontSize: '1.15rem' }}>
+        We would love to hear from you. Reach out anytime!
+      </p>
+
+      <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+        <h2 className="h2 reveal" style={{ marginBottom: '2rem', textAlign: 'center' }}>Get in Touch</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }} className="stagger-children">
+          {contactCards.map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <div key={index} className={`glow-card reveal ${card.delay}`}>
+                <div className="glow-card-inner" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', padding: '1.75rem 2rem' }}>
+                  <div className="icon-container animate-pulse-glow" style={{ animationDelay: `${index * 0.5}s`, flexShrink: 0 }}>
+                    <Icon size={28} color={card.color} />
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '1.1rem', marginBottom: '0.25rem' }}>{card.title}</strong>
+                    <p className="text-muted">{card.info}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
