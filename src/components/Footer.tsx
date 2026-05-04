@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Leaf } from 'lucide-react';
 
 export default function Footer() {
   return (

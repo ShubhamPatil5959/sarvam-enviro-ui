@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Leaf, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Navbar() {
