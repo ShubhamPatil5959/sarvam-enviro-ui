@@ -809,6 +809,38 @@ img {
 }
 
 /* ============================================================
+   CLICKABLE SERVICE CARDS
+   ============================================================ */
+
+.glow-card[style*="cursor: pointer"] {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.glow-card[style*="cursor: pointer"]:active {
+  transform: scale(0.98) !important;
+  transition: transform 0.1s ease !important;
+}
+
+.glow-card[style*="cursor: pointer"]:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow-strong);
+}
+
+/* Learn More arrow animation on card hover */
+a.glow-card:hover .learn-more-arrow {
+  transform: translateX(5px);
+}
+
+a.glow-card {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+a.glow-card:active {
+  transform: scale(0.98) !important;
+}
+
+/* ============================================================
    FOOTER ANIMATIONS
    ============================================================ */
 

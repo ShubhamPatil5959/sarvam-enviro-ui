@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useScrollReveal, useAnimatedCounter, useTypewriter } from '../hooks/useAnimations';
 import Particles from '../components/Particles';
 import landingBg from '../assets/LandingPage.jpg';
+import { services } from '../data/services';
 
 function CounterCard({ end, label, icon: Icon }: { end: number; label: string; icon: React.ElementType }) {
   const counterRef = useAnimatedCounter(end, 2200);
@@ -21,7 +22,7 @@ function CounterCard({ end, label, icon: Icon }: { end: number; label: string; i
 
 export default function Home() {
   const scrollRef = useScrollReveal();
-  const typewriterRef = useTypewriter('Building a cleaner, greener future.', 70);
+  const typewriterRef = useTypewriter('Transformation Through Sustainability.', 70);
 
   return (
     <div ref={scrollRef} className="page-transition">
@@ -81,46 +82,24 @@ export default function Home() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1.5rem' }} className="stagger-children">
             
-            <div className="glow-card reveal-scale">
-              <div className="glow-card-inner card-border-animated">
-                <div className="icon-container animate-float" style={{ marginBottom: '1.5rem' }}>
-                  <ClipboardCheck size={36} color="var(--color-primary)" />
-                </div>
-                <h3 className="h3" style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Environmental Compliance</h3>
-                <p className="text-muted">Complete documentation and approval support for regulatory requirements.</p>
-              </div>
-            </div>
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Link to={`/services/${service.slug}`} key={service.slug} className="glow-card reveal-scale" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <div className="glow-card-inner card-border-animated" style={{ height: '100%' }}>
+                    <div className="icon-container animate-float" style={{ marginBottom: '1.5rem', animationDelay: `${index * 0.5}s` }}>
+                      <Icon size={36} color={service.color} />
+                    </div>
+                    <h3 className="h3" style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--color-text)' }}>{service.title}</h3>
+                    <p className="text-muted">{service.description.substring(0, 80)}...</p>
+                  </div>
+                </Link>
+              );
+            })}
 
-            <div className="glow-card reveal-scale">
-              <div className="glow-card-inner card-border-animated">
-                <div className="icon-container animate-float" style={{ marginBottom: '1.5rem', animationDelay: '0.5s' }}>
-                  <Droplets size={36} color="var(--color-secondary)" />
-                </div>
-                <h3 className="h3" style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Water Solutions</h3>
-                <p className="text-muted">Efficient systems to treat and recycle water for industrial conservation.</p>
-              </div>
-            </div>
-
-            <div className="glow-card reveal-scale">
-              <div className="glow-card-inner card-border-animated">
-                <div className="icon-container animate-float" style={{ marginBottom: '1.5rem', animationDelay: '1s' }}>
-                  <Leaf size={36} color="var(--color-primary)" />
-                </div>
-                <h3 className="h3" style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Sustainability Consulting</h3>
-                <p className="text-muted">ESG frameworks, carbon reduction strategies, and performance improvements.</p>
-              </div>
-            </div>
-
-            <div className="glow-card reveal-scale">
-              <div className="glow-card-inner card-border-animated">
-                <div className="icon-container animate-float" style={{ marginBottom: '1.5rem', animationDelay: '1.5s' }}>
-                  <Microscope size={36} color="var(--color-secondary)" />
-                </div>
-                <h3 className="h3" style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Laboratory Testing</h3>
-                <p className="text-muted">Precise monitoring of environmental parameters to maintain standards.</p>
-              </div>
-            </div>
-
+          </div>
+          <div className="reveal" style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <Link to="/services" className="btn btn-outline">View All Services</Link>
           </div>
         </div>
       </section>
@@ -134,7 +113,7 @@ export default function Home() {
             Download our comprehensive corporate brochure to learn more about our services, methodologies, and commitment to the environment.
           </p>
           <div style={{ padding: '1rem' }}>
-            <a href="/Sarvam%20Enviro%20Brochure.pdf" download="Sarvam Enviro Brochure.pdf" className="btn glass btn-ripple-white" style={{ color: 'var(--color-primary)', padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
+            <a href="/Sarvam%20Brochure_latest.pdf" download="Sarvam Brochure_latest.pdf" className="btn glass btn-ripple-white" style={{ color: 'var(--color-primary)', padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
               <Download size={24} />
               Download Brochure PDF
             </a>

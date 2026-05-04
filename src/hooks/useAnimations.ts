@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 /**
  * Hook that applies IntersectionObserver-based scroll reveal animations.
@@ -7,31 +8,40 @@ import { useEffect, useRef } from 'react';
  */
 export function useScrollReveal() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
-    const root = containerRef.current;
-    if (!root) return;
+    // Add a small timeout to ensure DOM has updated after route change
+    const timeout = setTimeout(() => {
+      const root = containerRef.current;
+      if (!root) return;
 
-    const targets = root.querySelectorAll(
-      '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur'
-    );
+      const allTargets = root.querySelectorAll(
+        '.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur'
+      );
+      
+      // Remove revealed class to replay animations on route change
+      allTargets.forEach(t => t.classList.remove('revealed'));
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target); // animate once
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
-    );
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target); // animate once
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+      );
 
-    targets.forEach((t) => observer.observe(t));
+      allTargets.forEach((t) => observer.observe(t));
 
-    return () => observer.disconnect();
-  }, []);
+      return () => observer.disconnect();
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, [location.pathname]);
 
   return containerRef;
 }
