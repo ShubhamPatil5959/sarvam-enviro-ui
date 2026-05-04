@@ -1,4 +1,4 @@
-import { Download, ClipboardCheck, Droplets, Leaf, Microscope, Award, Users, FlaskConical, Building2 } from 'lucide-react';
+import { Download, Award, Users, FlaskConical, Building2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollReveal, useAnimatedCounter, useTypewriter } from '../hooks/useAnimations';
 import Particles from '../components/Particles';
@@ -32,7 +32,7 @@ export default function Home() {
         <div className="hero-bg" style={{ backgroundImage: `url(${landingBg})` }} />
         {/* Overlay */}
         <div className="hero-overlay" />
-        
+
         {/* Floating particles */}
         <Particles count={25} />
 
@@ -43,7 +43,7 @@ export default function Home() {
         {/* Content */}
         <div className="container hero-content" style={{ textAlign: 'center' }}>
           <h1 className="h1 animate-blur-in" style={{ marginBottom: '1.5rem' }}>
-            <span ref={typewriterRef} className="typewriter-cursor" style={{ 
+            <span ref={typewriterRef} className="typewriter-cursor" style={{
               background: 'linear-gradient(to right, #fff, #6ee7b7, #fff)',
               backgroundSize: '200%',
               WebkitBackgroundClip: 'text',
@@ -81,7 +81,7 @@ export default function Home() {
             End-to-end environmental solutions tailored for your industry
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1.5rem' }} className="stagger-children">
-            
+
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
