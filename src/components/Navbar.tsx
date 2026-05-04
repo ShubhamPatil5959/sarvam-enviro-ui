@@ -42,13 +42,19 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`navbar glass ${scrolled ? 'scrolled' : ''}`}>
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} style={{
+        background: scrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 0.92)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        boxShadow: scrolled ? '0 4px 30px rgba(0, 0, 0, 0.1)' : 'none',
+        borderBottom: scrolled ? 'none' : '1px solid rgba(255,255,255,0.2)'
+      }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '70px' }}>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', fontSize: '1.35rem', color: 'var(--color-primary)', zIndex: 200 }}>
-            <div className="animate-sway" style={{ display: 'inline-flex' }}>
-              <Leaf />
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: '800', fontSize: '1.5rem', zIndex: 200, letterSpacing: '-0.02em' }}>
+            <img src="/SARVAM_LOGO.png" alt="Sarvam Enviro Logo" style={{ height: '65px', objectFit: 'contain', mixBlendMode: 'multiply' }} />
+            <div>
+              <span style={{ color: 'var(--color-text)' }}>Sarvam</span> <span style={{ color: 'var(--color-primary-dark)' }}>Enviro</span>
             </div>
-            Sarvam Enviro
           </Link>
 
           {/* Desktop nav */}

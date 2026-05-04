@@ -1,4 +1,4 @@
-import { Download, Award, Users, FlaskConical, Building2 } from 'lucide-react';
+import { Download, Award, Users, FlaskConical, Building2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollReveal, useAnimatedCounter, useTypewriter } from '../hooks/useAnimations';
 import Particles from '../components/Particles';
@@ -86,12 +86,18 @@ export default function Home() {
               const Icon = service.icon;
               return (
                 <Link to={`/services/${service.slug}`} key={service.slug} className="glow-card reveal-scale" style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <div className="glow-card-inner card-border-animated" style={{ height: '100%' }}>
+                  <div className="glow-card-inner card-border-animated" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <div className="icon-container animate-float" style={{ marginBottom: '1.5rem', animationDelay: `${index * 0.5}s` }}>
                       <Icon size={36} color={service.color} />
                     </div>
                     <h3 className="h3" style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--color-text)' }}>{service.title}</h3>
-                    <p className="text-muted">{service.description.substring(0, 80)}...</p>
+                    <p className="text-muted" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden', marginBottom: '1.5rem' }}>
+                      {service.description}
+                    </p>
+                    <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-primary)', fontWeight: 600, fontSize: '0.95rem' }}>
+                      Learn More
+                      <ArrowRight size={18} style={{ transition: 'transform 0.3s ease' }} className="learn-more-arrow" />
+                    </div>
                   </div>
                 </Link>
               );

@@ -6,11 +6,11 @@ export default function Footer() {
     <footer style={{ backgroundColor: 'var(--color-text)', color: 'white', padding: '4rem 0' }}>
       <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(220px, 100%), 1fr))', gap: '2rem' }}>
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-            <div className="animate-sway" style={{ display: 'inline-flex' }}>
-              <Leaf size={20} color="var(--color-primary)" />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+            <div style={{ background: 'white', padding: '0.25rem', borderRadius: '8px' }}>
+              <img src="/SARVAM_LOGO.png" alt="Sarvam Enviro Logo" style={{ height: '60px', objectFit: 'contain' }} />
             </div>
-            <h3>Sarvam Enviro</h3>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: '800', letterSpacing: '-0.02em' }}>Sarvam Enviro</h3>
           </div>
           <p style={{ opacity: 0.7, lineHeight: 1.8 }}>Building a cleaner, greener, and sustainable future.</p>
         </div>
