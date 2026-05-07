@@ -1,4 +1,4 @@
-import { ClipboardCheck, Droplets, Leaf, Microscope, Package } from 'lucide-react';
+import { ClipboardCheck, Droplets, Leaf, Microscope, Package, TrendingUp } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface ServiceData {
@@ -66,6 +66,25 @@ export const services: ServiceData[] = [
       'Science Based Targets initiative (SBTi) Alignment',
       'Double Materiality Assessments',
       'Climate Action Planning for Industries'
+    ],
+    color: 'var(--color-primary)',
+  },
+  {
+    slug: 'carbon-sustainability',
+    icon: TrendingUp,
+    title: 'Turn Sustainability into Revenue',
+    description: 'Convert your sustainability commitments into measurable financial value — through carbon project development, carbon credit management, circular economy solutions, and renewable energy certificate services.',
+    features: ['Carbon Project Development', 'Carbon Credit Management', 'Circular Economy & EPR', 'IREC Services'],
+    details: [
+      'Carbon Project Feasibility Studies & Baseline Assessment',
+      'Project Design & Methodology Selection (Verra, Gold Standard)',
+      'Regulatory Approvals, LOAs & Government Liaisoning',
+      'Community Engagement with Farmers, FPOs & NGOs',
+      'Monitoring, Reporting & Verification (MRV) Systems',
+      'Carbon Credit Certification, Issuance & Trading Strategy',
+      'Plastic Credit Solutions & EPR Advisory & Trading',
+      'Waste-to-Energy Project Support',
+      'IREC Registration, Compliance & Trading & Monetization',
     ],
     color: 'var(--color-primary)',
   },

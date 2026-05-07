@@ -189,7 +189,7 @@ export default function ServiceDetail() {
             <Link to="/contact" className="btn glass btn-ripple-white" style={{ color: 'var(--color-primary)', padding: '1rem 2rem', fontSize: '1.05rem' }}>
               Contact Us
             </Link>
-            <a href="/Sarvam%20Enviro%20Brochure.pdf" download="Sarvam Enviro Brochure.pdf" className="btn" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', border: '1px solid rgba(255,255,255,0.3)', padding: '1rem 2rem', fontSize: '1.05rem' }}>
+            <a href="/Sarvam%20Enviro%20Solutions%20Pvt.%20Ltd.%20Brochure..pdf" download="Sarvam Enviro Solutions Pvt. Ltd. Brochure..pdf" className="btn" style={{ background: 'rgba(255,255,255,0.15)', color: 'white', border: '1px solid rgba(255,255,255,0.3)', padding: '1rem 2rem', fontSize: '1.05rem' }}>
               Download Brochure
             </a>
           </div>

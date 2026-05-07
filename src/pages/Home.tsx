@@ -119,7 +119,7 @@ export default function Home() {
             Download our comprehensive corporate brochure to learn more about our services, methodologies, and commitment to the environment.
           </p>
           <div style={{ padding: '1rem' }}>
-            <a href="/Sarvam%20Brochure_latest.pdf" download="Sarvam Brochure_latest.pdf" className="btn glass btn-ripple-white" style={{ color: 'var(--color-primary)', padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
+            <a href="/Sarvam%20Enviro%20Solutions%20Pvt.%20Ltd.%20Brochure..pdf" download="Sarvam Enviro Solutions Pvt. Ltd. Brochure..pdf" className="btn glass btn-ripple-white" style={{ color: 'var(--color-primary)', padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
               <Download size={24} />
               Download Brochure PDF
             </a>
