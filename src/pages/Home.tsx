@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, Award, Users, FlaskConical, Building2, ArrowRight } from 'lucide-react';
+import { Download, Award, Users, FlaskConical, Building2, ArrowRight, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollReveal, useAnimatedCounter, useTypewriter } from '../hooks/useAnimations';
 import Particles from '../components/Particles';
@@ -36,7 +36,7 @@ export default function Home() {
   React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrentHero((prev) => (prev + 1) % heroImages.length);
-    }, 2500);
+    }, 2200);
     return () => clearInterval(timer);
   }, []);
 
@@ -164,7 +164,7 @@ export default function Home() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '1.5rem' }} className="stagger-children">
 
-            {services.map((service, index) => {
+            {services.slice(0, 3).map((service, index) => {
               const Icon = service.icon;
               return (
                 <Link to={`/services/${service.slug}`} key={service.slug} className="glow-card reveal-scale" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -202,43 +202,55 @@ export default function Home() {
 
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }} className="stagger-children">
             {[
-              { name: 'Dr. Ram Konale', role: 'CEO', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&h=300&auto=format&fit=crop' },
-              { name: 'Dr. Nilesh Patil', role: 'Chief Advisor', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&h=300&auto=format&fit=crop' }
+              { name: 'Dr. Ram Konale', role: 'CEO', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&h=300&auto=format&fit=crop', linkedin: '#' },
+              { name: 'Dr. Nilesh Patil', role: 'Chief Advisor', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&h=300&auto=format&fit=crop', linkedin: '#' }
             ].map((member, i) => (
-              <div key={i} className="reveal-scale leadership-card" style={{
-                textAlign: 'center',
-                width: 'min(320px, 100%)',
-                background: 'rgba(255, 255, 255, 0.7)',
-                backdropFilter: 'blur(10px)',
-                borderRadius: 'var(--radius-xl)',
-                padding: '2.5rem 1.5rem',
-                border: '1px solid rgba(255,255,255,0.4)',
-                boxShadow: 'var(--shadow-lg)',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-              }}>
-                <div style={{
-                  width: '140px',
-                  height: '140px',
-                  borderRadius: '50%',
-                  margin: '0 auto 1.5rem',
-                  overflow: 'hidden',
-                  border: '4px solid white',
-                  boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
-                }}>
-                  <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }} className="leadership-img" />
+              <div key={i} className="glow-card reveal-scale leadership-card" style={{ width: 'min(350px, 100%)' }}>
+                <div className="glow-card-inner card-border-animated" style={{ padding: '3.5rem 2.5rem', textAlign: 'center', height: '100%' }}>
+                  <div style={{
+                    width: '150px',
+                    height: '150px',
+                    borderRadius: '50%',
+                    margin: '0 auto 2rem',
+                    position: 'relative',
+                    padding: '5px',
+                    background: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))',
+                    boxShadow: 'var(--shadow-xl)',
+                  }}>
+                    <div style={{ width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', border: '4px solid white' }}>
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                        className="leadership-img"
+                      />
+                    </div>
+                  </div>
+                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--color-text)' }}>{member.name}</h3>
+                  <p style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '0.95rem', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{member.role}</p>
+
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    color: '#0A66C2',
+                    fontWeight: 600,
+                    fontSize: '0.95rem',
+                    transition: 'all 0.3s ease',
+                    padding: '0.6rem 1.2rem',
+                    borderRadius: 'var(--radius-full)',
+                    background: 'rgba(10, 102, 194, 0.08)',
+                    border: '1px solid rgba(10, 102, 194, 0.1)'
+                  }} className="hover-lift">
+                    <Linkedin size={18} />
+                    Connect
+                  </a>
                 </div>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '0.25rem', color: 'var(--color-text)' }}>{member.name}</h3>
-                <p style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '0.95rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{member.role}</p>
-                <div style={{ width: '40px', height: '3px', background: 'var(--color-secondary)', margin: '0 auto', borderRadius: '2px' }}></div>
               </div>
             ))}
           </div>
 
           <style>{`
-            .leadership-card:hover {
-              transform: translateY(-5px);
-              box-shadow: var(--shadow-xl) !important;
-            }
             .leadership-card:hover .leadership-img {
               transform: scale(1.1);
             }
