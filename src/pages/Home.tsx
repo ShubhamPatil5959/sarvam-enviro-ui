@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Download, Award, Users, FlaskConical, Building2, ArrowRight, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useScrollReveal, useAnimatedCounter, useTypewriter } from '../hooks/useAnimations';
@@ -26,6 +26,21 @@ export default function Home() {
   const typewriterRef = useTypewriter('Transformation Through Sustainability.', 70);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [currentHero, setCurrentHero] = useState(0);
+
+  const slideshowImages = [
+    { src: '/Waste-Management.jpg', alt: 'Waste Management Solutions' },
+    { src: '/Renewable-Energy.jpg.png', alt: 'Renewable Energy Projects' },
+    { src: '/Nature-Restoration.jpg', alt: 'Nature Restoration Initiatives' },
+  ];
+
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slideshowImages.length);
+    }, 2000); // Change image every 4 seconds
+    return () => clearInterval(interval);
+  }, [slideshowImages.length]);
 
   const heroImages = [
     landingBg,
@@ -143,8 +158,50 @@ export default function Home() {
         </p>
       </section>
 
+      {/* Who We Are Intro Section */}
+      <section className="section" style={{ background: 'white', paddingBottom: '3rem' }}>
+        <div className="container">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4rem', flexWrap: 'wrap' }}>
+            <div className="reveal-left" style={{ flex: '1 1 500px' }}>
+              <h2 className="h2" style={{ marginBottom: '1.5rem' }}>
+                Who We <span className="text-gradient">Are</span>
+              </h2>
+              <p className="text-muted" style={{ fontSize: '1.15rem', lineHeight: 1.8, marginBottom: '2rem' }}>
+                Sarvam Enviro Solutions is a one-stop destination for environmental and sustainability needs. We believe the future of business and the planet are deeply interconnected. We help organizations move beyond compliance to create meaningful, measurable impact through sustainable water management and circular economy strategies.
+              </p>
+              <Link to="/about" className="btn btn-primary btn-ripple hover-lift" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', padding: '0.8rem 2rem' }}>
+                Learn More About Us <ArrowRight size={18} />
+              </Link>
+            </div>
+            <div className="reveal-right" style={{ flex: '1 1 400px', position: 'relative', height: '420px' }}>
+              <div className="glow-card" style={{ padding: '0', borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: 'var(--shadow-2xl)', height: '100%' }}>
+                <div className="glow-card-inner" style={{ padding: '0', height: '100%' }}>
+                  {slideshowImages.map((slide, index) => (
+                    <img
+                      key={index}
+                      src={slide.src}
+                      alt={slide.alt}
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        opacity: currentSlideIndex === index ? 1 : 0,
+                        transition: 'opacity 1s ease-in-out',
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Animated Stats Counter Section */}
-      <section className="section counter-section" style={{ background: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(8px)' }}>
+      <section className="section counter-section" style={{ background: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(8px)', paddingTop: '3rem' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(150px, 100%), 1fr))', gap: '1rem' }} className="stagger-children">
             <CounterCard end={15} label="Years of Experience" icon={Award} />
