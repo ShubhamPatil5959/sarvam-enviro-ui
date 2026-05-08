@@ -1,8 +1,22 @@
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
+
 export default function Layout() {
+  const [scrollProgress, setScrollProgress] = React.useState(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Replace with your actual WhatsApp number (include country code, no + or spaces)
   const whatsappNumber = "9112006989";
   const whatsappMessage = "Hello Sarvam Enviro, I would like to know more about your services.";
@@ -10,11 +24,24 @@ export default function Layout() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative' }}>
+      <div 
+        style={{ 
+          position: 'fixed', 
+          top: 0, 
+          left: 0, 
+          height: '4px', 
+          background: 'linear-gradient(to right, var(--color-primary), var(--color-secondary))', 
+          width: `${scrollProgress}%`, 
+          zIndex: 2000,
+          transition: 'width 0.1s ease-out'
+        }} 
+      />
       <Navbar />
       <main style={{ flex: 1 }}>
         <Outlet />
       </main>
       <Footer />
+
 
       {/* Floating WhatsApp Button */}
       <a

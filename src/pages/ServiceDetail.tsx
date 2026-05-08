@@ -26,21 +26,21 @@ export default function ServiceDetail() {
   return (
     <div ref={scrollRef} className="page-transition">
       {/* Hero Banner */}
-      <section className="section" style={{ 
+      <section className="section" style={{
         background: `linear-gradient(135deg, ${service.color === 'var(--color-primary)' ? 'rgba(16,185,129,0.08)' : 'rgba(14,165,233,0.08)'}, transparent)`,
         position: 'relative',
         overflow: 'hidden'
       }}>
         <div className="container">
           {/* Back button */}
-          <Link 
-            to="/services" 
+          <Link
+            to="/services"
             className="reveal"
-            style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              gap: '0.5rem', 
-              color: 'var(--color-text-muted)', 
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              color: 'var(--color-text-muted)',
               fontSize: '0.95rem',
               marginBottom: '2rem',
               transition: 'color 0.3s ease',
@@ -72,31 +72,31 @@ export default function ServiceDetail() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '1.5rem' }}>
             <div className="glow-card reveal-scale">
               <div style={{ width: '100%', height: '400px', backgroundColor: 'rgba(0,0,0,0.05)', borderRadius: 'var(--radius-xl)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img 
-                  src={`/${service.slug}-1.jpg`} 
-                  alt={`${service.title} 1`} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                <img
+                  src={`/${service.slug}-1.jpg`}
+                  alt={`${service.title} 1`}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                     if (e.currentTarget.parentElement) {
                       e.currentTarget.parentElement.innerHTML = '<span style="color: var(--color-text-muted); opacity: 0.5;">Image Placeholder: save as /' + service.slug + '-1.jpg</span>';
                     }
-                  }} 
+                  }}
                 />
               </div>
             </div>
             <div className="glow-card reveal-scale" style={{ animationDelay: '0.2s' }}>
               <div style={{ width: '100%', height: '400px', backgroundColor: 'rgba(0,0,0,0.05)', borderRadius: 'var(--radius-xl)', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img 
-                  src={`/${service.slug}-2.jpg`} 
-                  alt={`${service.title} 2`} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                <img
+                  src={`/${service.slug}-2.jpg`}
+                  alt={`${service.title} 2`}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
                     if (e.currentTarget.parentElement) {
                       e.currentTarget.parentElement.innerHTML = '<span style="color: var(--color-text-muted); opacity: 0.5;">Image Placeholder: save as /' + service.slug + '-2.jpg</span>';
                     }
-                  }} 
+                  }}
                 />
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function ServiceDetail() {
       <section className="section">
         <div className="container">
           <h2 className="h2 reveal" style={{ textAlign: 'center', marginBottom: '1rem' }}>
-            Key <span className="text-gradient">Features</span>
+            More <span className="text-gradient">About</span>
           </h2>
           <p className="text-muted reveal" style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '500px', margin: '0 auto 3rem' }}>
             Core areas of our {service.title.toLowerCase()} services
@@ -118,9 +118,9 @@ export default function ServiceDetail() {
             {service.features.map((feature, i) => (
               <div key={i} className="glow-card reveal-scale" style={{ textAlign: 'center' }}>
                 <div className="glow-card-inner" style={{ padding: '2rem 1.5rem' }}>
-                  <div style={{ 
-                    width: '50px', 
-                    height: '50px', 
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
                     borderRadius: '50%',
                     background: `linear-gradient(135deg, ${service.color === 'var(--color-primary)' ? 'rgba(16,185,129,0.15)' : 'rgba(14,165,233,0.15)'}, transparent)`,
                     display: 'flex',
@@ -154,10 +154,10 @@ export default function ServiceDetail() {
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: '1rem' }} className="stagger-children">
               {service.details.map((detail, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className="reveal glass hover-lift"
-                  style={{ 
+                  style={{
                     padding: '1.25rem 1.5rem',
                     borderRadius: 'var(--radius-lg)',
                     display: 'flex',
@@ -165,10 +165,10 @@ export default function ServiceDetail() {
                     gap: '1rem',
                   }}
                 >
-                  <CheckCircle2 
-                    size={22} 
-                    color={service.color === 'var(--color-primary)' ? '#10b981' : '#0ea5e9'} 
-                    style={{ flexShrink: 0, marginTop: '2px' }} 
+                  <CheckCircle2
+                    size={22}
+                    color={service.color === 'var(--color-primary)' ? '#10b981' : '#0ea5e9'}
+                    style={{ flexShrink: 0, marginTop: '2px' }}
                   />
                   <span style={{ fontSize: '1rem', lineHeight: 1.6, color: 'var(--color-text)' }}>{detail}</span>
                 </div>
@@ -206,8 +206,8 @@ export default function ServiceDetail() {
             {otherServices.map((other) => {
               const OtherIcon = other.icon;
               return (
-                <Link 
-                  key={other.slug} 
+                <Link
+                  key={other.slug}
                   to={`/services/${other.slug}`}
                   className="glow-card reveal-scale"
                   style={{ textDecoration: 'none', color: 'inherit' }}

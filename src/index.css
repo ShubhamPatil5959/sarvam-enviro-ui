@@ -57,6 +57,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes auraMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 body {
   font-family: var(--font-main);
   background-color: var(--color-background);
@@ -66,6 +72,8 @@ body {
     radial-gradient(at 100% 100%, hsla(158, 85%, 90%, 1) 0px, transparent 50%),
     radial-gradient(at 0% 100%, hsla(199, 90%, 90%, 1) 0px, transparent 50%);
   background-attachment: fixed;
+  background-size: 200% 200%;
+  animation: auraMove 15s ease infinite;
   color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -722,13 +730,28 @@ img {
    ============================================================ */
 
 .tilt-card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   transform-style: preserve-3d;
   perspective: 1000px;
 }
 
 .tilt-card:hover {
+  transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
   box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.glow-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-glow-strong);
 }
 
 /* Top border animated gradient */
@@ -786,6 +809,45 @@ img {
 .hover-lift:hover .icon-container {
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(14, 165, 233, 0.2));
   transform: scale(1.1);
+}
+
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.footer-social-icon:hover {
+  background: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+.footer-link-premium {
+  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-link-premium:hover {
+  opacity: 1 !important;
+  transform: translateX(5px);
+  color: var(--color-primary-light);
+}
+
+.footer-link-premium div {
+  transition: all 0.3s ease;
+}
+
+.footer-link-premium:hover div {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 /* ============================================================
@@ -1071,3 +1133,44 @@ a.glow-card:active {
 .t-delay-300 { transition-delay: 300ms !important; }
 .t-delay-400 { transition-delay: 400ms !important; }
 .t-delay-500 { transition-delay: 500ms !important; }
+
+/* ============================================================
+   SOCIAL SIDE TABS
+   ============================================================ */
+
+.social-side-tab {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  height: 50px;
+  background-color: var(--tab-color, var(--color-primary));
+  color: white;
+  text-decoration: none;
+  border-radius: 0 8px 8px 0;
+  transform: translateX(-130px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-side-tab:hover {
+  transform: translateX(0);
+}
+
+.social-side-tab-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: auto; /* Push icon to the right side when collapsed */
+}
+
+.social-side-tab-label {
+  padding-left: 15px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  position: absolute;
+  left: 0;
+}
