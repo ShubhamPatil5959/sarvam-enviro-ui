@@ -86,7 +86,6 @@ export const services: ServiceData[] = [
       'Noise Level Monitoring',
       'Soil & Groundwater Testing',
       'Emission & Effluent Monitoring',
-      'Environmental Data Analysis & Reporting',
       'Our approach combines advanced monitoring techniques with regulatory expertise to ensure precise assessments and timely compliance. By enabling continuous monitoring and data-driven insights, we help businesses minimize environmental risks, maintain compliance, and improve overall sustainability performance.'
     ],
     color: 'var(--color-secondary)',
@@ -103,8 +102,6 @@ export const services: ServiceData[] = [
       'Boiler & Softener Treatment Chemicals',
       'Laboratory Testing Equipment & Instruments',
       'Industrial Safety Products & Personal Protective Equipment (PPE)',
-      'Continuous Emission Monitoring Systems (CEMS)',
-      'Environmental Display Boards (LED)',
       'Spare Parts & Consumables for Treatment Plants',
     ],
     color: 'var(--color-primary)',
