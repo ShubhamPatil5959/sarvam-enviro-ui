@@ -247,14 +247,24 @@ export default function ServiceDetail() {
           }
 
           @media (max-width: 768px) {
+            /* Force visibility on mobile in case scroll sensor fails */
+            .reveal, .reveal-scale, .tree-container, .tree-child-wrapper {
+              opacity: 1 !important;
+              transform: none !important;
+              filter: none !important;
+            }
+
             .tree-wrapper::before {
               left: 20px;
+              transform: none;
             }
             .tree-parent-node {
-              padding: 1rem 2rem;
+              padding: 1.25rem 2rem;
               font-size: 1.25rem;
               margin-bottom: 3rem;
-              width: 90%;
+              width: calc(100% - 40px);
+              margin-left: 20px;
+              text-align: left;
             }
             .tree-children-container {
               gap: 2rem;
