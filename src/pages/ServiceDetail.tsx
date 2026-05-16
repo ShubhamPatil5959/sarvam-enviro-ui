@@ -334,7 +334,9 @@ export default function ServiceDetail() {
                   const detailDesc = hasTitle ? parts.slice(1).join(':').trim() : detail;
                   
                   // Generate a safe filename based on the title or index
-                  const imageFilename = hasTitle 
+                  // If it's a "Check details" title, we prefer the indexed filename to maintain compatibility with existing images
+                  const isCheckDetails = detailTitle.toLowerCase().startsWith('check the details of');
+                  const imageFilename = (hasTitle && !isCheckDetails)
                     ? `/${detailTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}.jpg` 
                     : `/${service.slug}-detail-${i + 1}.jpg`;
 

@@ -3,7 +3,6 @@ import { Download, Award, Users, FlaskConical, Building2, ArrowRight, Linkedin }
 import { Link } from 'react-router-dom';
 import { useScrollReveal, useAnimatedCounter, useTypewriter } from '../hooks/useAnimations';
 import Particles from '../components/Particles';
-import landingBg from '../assets/LandingPage.jpg';
 import { services } from '../data/services';
 
 function CounterCard({ end, label, icon: Icon }: { end: number; label: string; icon: React.ElementType }) {
@@ -29,7 +28,7 @@ export default function Home() {
 
   const slideshowImages = [
     { src: '/Waste-Management.jpg', alt: 'Waste Management Solutions' },
-    { src: '/Renewable-Energy.jpg.png', alt: 'Renewable Energy Projects' },
+    { src: '/Renewable-Energy.jpg', alt: 'Renewable Energy Projects' },
     { src: '/Nature-Restoration.jpg', alt: 'Nature Restoration Initiatives' },
   ];
 
@@ -43,9 +42,9 @@ export default function Home() {
   }, [slideshowImages.length]);
 
   const heroImages = [
-    landingBg,
-    'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1600&auto=format&fit=crop', // Water/Tech
-    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1600&auto=format&fit=crop'  // Nature/Forest
+    '/hero-3.png',
+    '/hero-1.png',
+    '/hero-2.png'
   ];
 
   React.useEffect(() => {

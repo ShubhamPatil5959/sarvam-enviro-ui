@@ -36,15 +36,11 @@ export const services: ServiceData[] = [
     description: 'We provide end-to-end support for MPCB consents and environmental compliance, ensuring smooth approvals and full regulatory adherence. Our expertise covers a wide range of authorizations, enabling businesses to navigate complex regulations with ease.',
     features: ['CTE / CTO / CTR Consents', 'Waste Authorizations', 'EPR Registration & Trading', 'Regulatory Returns Filing'],
     details: [
-      'Consent to Establish (CTE) & Consent to Operate (CTO)',
-      'Consent Renewal Services',
-      'E-Waste, Hazardous Waste, Bio-medical Waste, Plastic Waste, and Battery Recycler Authorization',
-      'E-Waste Return (Form 3) & Hazardous Waste Annual Return (Form 4)',
-      'Environmental Status Report (Form 5) & Bio-medical Waste Annual Return',
-      'Online Manifest Submission (Form 10)',
-      'Extended Producer Responsibility (EPR) & Online Logbook System',
-      'Battery Return Services',
-      'Our services ensure accurate documentation, timely submissions, and complete compliance with regulatory frameworks. By streamlining reporting processes and integrating digital solutions, we enable businesses to focus on operations while maintaining full environmental accountability.'
+      'Check the details of MPCB Consents: Expert assistance for Consent to Establish (CTE), Consent to Operate (CTO), and seamless Consent Renewal services for all industrial categories.',
+      'Check the details of Waste Authorizations: Comprehensive authorizations for E-Waste, Hazardous Waste, Bio-medical Waste, Plastic Waste, and Battery Recyclers.',
+      'Check the details of Regulatory Returns: Timely filing of E-Waste Return (Form 3), Hazardous Waste Annual Return (Form 4), and Environmental Status Reports (Form 5).',
+      'Check the details of Specialized Compliance: End-to-end support for Extended Producer Responsibility (EPR) registration, Online Logbook Systems, and Battery Return services.',
+      'Check the details of Compliance Assurance: Accurate documentation, Online Manifest Submission (Form 10), and complete regulatory adherence to streamline your business operations.'
     ],
     color: 'var(--color-primary)',
   },
@@ -97,12 +93,10 @@ export const services: ServiceData[] = [
     description: 'Supply of high-quality water treatment chemicals, laboratory equipment, industrial safety products, CEMS systems, and environmental display boards for treatment plants and industries.',
     features: ['Water Treatment Chemicals', 'Laboratory Equipment', 'Safety Products & PPE', 'CEMS & Display Boards'],
     details: [
-      'RO Chemicals — Antiscalants, Membrane Cleaners',
-      'ETP & STP Chemicals — Coagulants, Flocculants, pH Adjusters',
-      'Boiler & Softener Treatment Chemicals',
-      'Laboratory Testing Equipment & Instruments',
-      'Industrial Safety Products & Personal Protective Equipment (PPE)',
-      'Spare Parts & Consumables for Treatment Plants',
+      'Check the details of Treatment Chemicals: Supply of high-quality RO Chemicals (Antiscalants, Membrane Cleaners) and ETP/STP Chemicals (Coagulants, Flocculants, pH Adjusters).',
+      'Check the details of Industrial Chemicals: Specialized Boiler and Softener treatment chemicals designed for optimal performance, efficiency, and equipment longevity.',
+      'Check the details of Laboratory & Safety: Comprehensive range of Laboratory Testing Equipment, Instruments, and Industrial Safety Products (PPE) for industrial use.',
+      'Check the details of Plant Consumables: Reliable supply of spare parts, consumables, and CEMS systems for all types of water and wastewater treatment plants.'
     ],
     color: 'var(--color-primary)',
   },
