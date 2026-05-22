@@ -59,7 +59,7 @@ export const services: ServiceData[] = [
   {
     slug: 'carbon-sustainability',
     icon: TrendingUp,
-    title: 'Turn Sustainability into Revenue',
+    title: 'Encash your Carbon',
     description: 'Convert your sustainability commitments into measurable financial value — through carbon project development, carbon credit lifecycle management, circular economy solutions, and IREC services.',
     features: ['Carbon Project Development', 'Carbon Credit Management', 'Circular Economy & EPR', 'IREC Services'],
     details: [
@@ -77,12 +77,12 @@ export const services: ServiceData[] = [
     description: 'We provide comprehensive environmental monitoring solutions to help organizations track, manage, and comply with regulatory standards while ensuring environmental protection and operational efficiency.',
     features: ['Air Quality Monitoring', 'Water & Wastewater Analysis', 'Noise Level Monitoring', 'Soil & Groundwater Testing'],
     details: [
-      'Air Quality Monitoring (Ambient & Stack)',
-      'Water & Wastewater Analysis',
-      'Noise Level Monitoring',
-      'Soil & Groundwater Testing',
-      'Emission & Effluent Monitoring',
-      'Our approach combines advanced monitoring techniques with regulatory expertise to ensure precise assessments and timely compliance. By enabling continuous monitoring and data-driven insights, we help businesses minimize environmental risks, maintain compliance, and improve overall sustainability performance.'
+      'Air Quality Monitoring: We offer comprehensive Ambient Air Quality (AAQ) and Stack Emission Monitoring to help industries ensure compliance with regulatory standards and minimize environmental impact.',
+      'Water & Wastewater Analysis: Our precise testing and analysis of water and wastewater help organizations monitor effluent quality, ensure safe discharge, and optimize treatment plant performance.',
+      'Noise Level Monitoring: We conduct ambient noise level monitoring and occupational health noise assessments to maintain safe working environments and regulatory compliance.',
+      'Soil & Groundwater Testing: We provide detailed soil quality testing and groundwater analysis to detect contamination, assess environmental risks, and ensure safe industrial operations.',
+      'Emission & Effluent Monitoring: Continuous and periodic monitoring of emissions and effluents, combined with advanced data-driven insights, to help businesses proactively manage their environmental footprint.',
+      'Holistic Approach: Our approach combines advanced monitoring techniques with regulatory expertise to ensure precise assessments and timely compliance, improving overall sustainability performance.'
     ],
     color: 'var(--color-secondary)',
   },

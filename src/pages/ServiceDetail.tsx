@@ -336,7 +336,8 @@ export default function ServiceDetail() {
                   // Generate a safe filename based on the title or index
                   // If it's a "Check details" title, we prefer the indexed filename to maintain compatibility with existing images
                   const isCheckDetails = detailTitle.toLowerCase().startsWith('check the details of');
-                  const imageFilename = (hasTitle && !isCheckDetails)
+                  const useIndexedNames = isCheckDetails || service.slug === 'environmental-monitoring';
+                  const imageFilename = (hasTitle && !useIndexedNames)
                     ? `/${detailTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}.jpg` 
                     : `/${service.slug}-detail-${i + 1}.jpg`;
 

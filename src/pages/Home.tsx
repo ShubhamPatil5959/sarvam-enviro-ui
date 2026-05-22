@@ -37,20 +37,21 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slideshowImages.length);
-    }, 2000); // Change image every 4 seconds
+    }, 4000); // Change image every 5 seconds
     return () => clearInterval(interval);
   }, [slideshowImages.length]);
 
   const heroImages = [
     '/hero-3.png',
+    '/rainwater-harvesting.jpg',
     '/hero-1.png',
-    '/hero-2.png'
+    '/hero-2.png',
   ];
 
   React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrentHero((prev) => (prev + 1) % heroImages.length);
-    }, 2200);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 

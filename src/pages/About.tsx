@@ -289,7 +289,7 @@ export default function About() {
 
         {/* Trust Badges */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h3 style={{ fontSize: '1.3rem', fontWeight: 600, marginBottom: '2rem', color: 'var(--color-text-muted)' }}>Our Credentials</h3>
+          <h3 style={{ fontSize: '1.3rem', fontWeight: 600, marginBottom: '2rem', color: 'var(--color-text-muted)' }}>Our Strength</h3>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap' }} className="stagger-children">
             {[
               { icon: ShieldCheck, label: 'Regulatory Expertise' },
