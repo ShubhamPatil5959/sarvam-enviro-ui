@@ -94,42 +94,6 @@ export default function ServiceDetail() {
 
 
 
-      {/* Key Features */}
-      <section className="section">
-        <div className="container">
-          <h2 className="h2 reveal" style={{ textAlign: 'center', marginBottom: '1rem' }}>
-            More <span className="text-gradient">About</span>
-          </h2>
-          <p className="text-muted reveal" style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '500px', margin: '0 auto 3rem' }}>
-            Core areas of our {service.title.toLowerCase()} services
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(220px, 100%), 1fr))', gap: '1.5rem' }} className="stagger-children">
-            {service.features.map((feature, i) => (
-              <div key={i} className="glow-card reveal-scale" style={{ textAlign: 'center' }}>
-                <div className="glow-card-inner" style={{ padding: '2rem 1.5rem' }}>
-                  <div style={{
-                    width: '50px',
-                    height: '50px',
-                    borderRadius: '50%',
-                    background: `linear-gradient(135deg, ${service.color === 'var(--color-primary)' ? 'rgba(16,185,129,0.15)' : 'rgba(14,165,233,0.15)'}, transparent)`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 1rem',
-                    fontSize: '1.3rem',
-                    fontWeight: 800,
-                    color: service.color === 'var(--color-primary)' ? '#10b981' : '#0ea5e9',
-                  }}>
-                    {i + 1}
-                  </div>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 600 }}>{feature}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Detailed Services (Tree Diagram Layout) */}
       <section className="section" style={{ background: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(8px)', overflow: 'hidden' }}>
