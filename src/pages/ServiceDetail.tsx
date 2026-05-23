@@ -38,8 +38,8 @@ export default function ServiceDetail() {
           zIndex: 0,
           backgroundColor: '#1a1a1a' // Fallback color
         }}>
-          <img 
-            src={`/${service.slug}-bg.jpg`} 
+          <img
+            src={`/${service.slug}-bg.jpg`}
             alt={`${service.title} Background`}
             style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.6 }}
             onError={(e) => {
@@ -307,7 +307,7 @@ export default function ServiceDetail() {
             }
           }
         `}</style>
-        
+
         <div className="container" style={{ maxWidth: '100%' }}>
           <h2 className="h2 reveal" style={{ textAlign: 'center', marginBottom: '1rem' }}>
             What We <span className="text-gradient">Offer</span>
@@ -318,7 +318,7 @@ export default function ServiceDetail() {
 
           <div className="tree-container reveal">
             <div className="tree-wrapper">
-              
+
               {/* Parent Node */}
               <div className="tree-parent-node">
                 {service.title}
@@ -332,13 +332,13 @@ export default function ServiceDetail() {
                   const hasTitle = parts.length > 1 && parts[0].length < 60;
                   const detailTitle = hasTitle ? parts[0].trim() : `Service ${i + 1}`;
                   const detailDesc = hasTitle ? parts.slice(1).join(':').trim() : detail;
-                  
+
                   // Generate a safe filename based on the title or index
-                  // If it's a "Check details" title, we prefer the indexed filename to maintain compatibility with existing images
-                  const isCheckDetails = detailTitle.toLowerCase().startsWith('check the details of');
-                  const useIndexedNames = isCheckDetails || service.slug === 'environmental-monitoring';
+                  // Some services use indexed names because the files are named like service-slug-detail-1.jpg
+                  const indexedServices = ['compliance-approvals', 'environmental-monitoring', 'industrial-trading'];
+                  const useIndexedNames = indexedServices.includes(service.slug);
                   const imageFilename = (hasTitle && !useIndexedNames)
-                    ? `/${detailTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}.jpg` 
+                    ? `/${detailTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}.jpg`
                     : `/${service.slug}-detail-${i + 1}.jpg`;
 
                   return (
@@ -356,12 +356,12 @@ export default function ServiceDetail() {
                           }}
                         >
                           {/* Image Section */}
-                          <div style={{ 
-                            width: '100%', 
-                            height: '200px', 
-                            backgroundColor: 'rgba(0,0,0,0.03)', 
-                            display: 'flex', 
-                            alignItems: 'center', 
+                          <div style={{
+                            width: '100%',
+                            height: '200px',
+                            backgroundColor: 'rgba(0,0,0,0.03)',
+                            display: 'flex',
+                            alignItems: 'center',
                             justifyContent: 'center',
                             borderBottom: '1px solid rgba(0,0,0,0.05)',
                             position: 'relative',
@@ -380,16 +380,16 @@ export default function ServiceDetail() {
                               filter: 'blur(10px) opacity(0.3)',
                               transform: 'scale(1.1)'
                             }} />
-                            
-                            <img 
+
+                            <img
                               src={imageFilename}
                               alt={detailTitle}
-                              style={{ 
-                                width: '100%', 
-                                height: '100%', 
-                                objectFit: 'contain', 
-                                position: 'relative', 
-                                zIndex: 1 
+                              style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'contain',
+                                position: 'relative',
+                                zIndex: 1
                               }}
                               onError={(e) => {
                                 e.currentTarget.style.display = 'none';
@@ -416,9 +416,9 @@ export default function ServiceDetail() {
                                 color={service.color === 'var(--color-primary)' ? '#10b981' : '#0ea5e9'}
                                 style={{ flexShrink: 0, marginTop: '0.2rem' }}
                               />
-                              <h3 style={{ 
-                                fontSize: '1.2rem', 
-                                fontWeight: 700, 
+                              <h3 style={{
+                                fontSize: '1.2rem',
+                                fontWeight: 700,
                                 color: 'var(--color-text)',
                                 lineHeight: 1.4,
                                 margin: 0
@@ -426,10 +426,10 @@ export default function ServiceDetail() {
                                 {detailTitle}
                               </h3>
                             </div>
-                            <p style={{ 
-                              fontSize: '0.95rem', 
-                              lineHeight: 1.6, 
-                              color: 'var(--color-text-muted)', 
+                            <p style={{
+                              fontSize: '0.95rem',
+                              lineHeight: 1.6,
+                              color: 'var(--color-text-muted)',
                               margin: 0,
                               opacity: 0.9
                             }}>

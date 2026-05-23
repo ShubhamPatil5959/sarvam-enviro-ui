@@ -64,7 +64,7 @@ export default function About() {
           About <span className="text-gradient">Sarvam Enviro</span>
         </h1>
         <p className="text-muted animate-blur-in delay-200" style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: '650px', margin: '0 auto 4rem', fontSize: '1.25rem', fontWeight: 500, color: 'var(--color-primary)' }}>
-          "Transformation Through Sustainability"
+          "Synergy for Green Future"
         </p>
 
         {/* Who We Are */}
@@ -217,14 +217,14 @@ export default function About() {
             {[
               {
                 name: 'Dr. Ram Konale',
-                role: 'CEO',
+                role: 'Director- Technical and Compliance',
                 bio: 'A visionary leader with extensive experience in driving sustainable environmental solutions and corporate strategy.',
                 linkedin: '#',
                 image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&h=300&auto=format&fit=crop'
               },
               {
-                name: 'Dr. Nilesh Patil',
-                role: 'Chief Advisor',
+                name: 'Mr. Shreyash Thorat',
+                role: 'Director- Business Growth & Strategy',
                 bio: 'An esteemed expert providing strategic guidance on advanced environmental technologies and regulatory compliance frameworks.',
                 linkedin: '#',
                 image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&h=300&auto=format&fit=crop'

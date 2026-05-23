@@ -10,7 +10,7 @@ export default function Contact() {
       title: 'Office Locations',
       info: (
         <>
-          <strong>Head Office:</strong> Pune<br />
+          <strong>Head Office:</strong> Swami Prerana, Shitole Nagar, Sangavi, Pimpari Chinchwad, Pune, Maharashtra- 411027<br />
         </>
       ),
       color: 'var(--color-primary)',
@@ -22,7 +22,7 @@ export default function Contact() {
       info: (
         <>
           +91 91120 06989<br />
-          +91 82085 67560
+          +91 9763830668
         </>
       ),
       color: 'var(--color-secondary)',
