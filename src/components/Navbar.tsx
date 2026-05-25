@@ -33,10 +33,12 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
+  const SHOW_TEAM = false;
+
   const links = [
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About Us' },
-    { to: '/about#team', label: 'Team' },
+    ...(SHOW_TEAM ? [{ to: '/about#team', label: 'Team' }] : []),
     { to: '/services', label: 'Services' },
     { to: '/contact', label: 'Contact Us' },
   ];

@@ -69,7 +69,7 @@ export function useAnimatedCounter(end: number, duration = 2000, startOnView = t
         // ease out cubic
         const eased = 1 - Math.pow(1 - progress, 3);
         const current = Math.round(eased * end);
-        el.textContent = current.toString() + (end >= 100 ? '+' : '+');
+        el.textContent = current.toString();
         if (progress < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);

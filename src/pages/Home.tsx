@@ -5,7 +5,7 @@ import { useScrollReveal, useAnimatedCounter, useTypewriter } from '../hooks/use
 import Particles from '../components/Particles';
 import { services } from '../data/services';
 
-function CounterCard({ end, label, icon: Icon }: { end: number; label: string; icon: React.ElementType }) {
+function CounterCard({ end, label, icon: Icon, suffix = '+' }: { end: number; label: string; icon: React.ElementType; suffix?: string }) {
   const counterRef = useAnimatedCounter(end, 2200);
   return (
     <div className="counter-item reveal-scale" style={{ position: 'relative' }}>
@@ -13,7 +13,7 @@ function CounterCard({ end, label, icon: Icon }: { end: number; label: string; i
         <Icon size={32} color="var(--color-primary)" />
       </div>
       <div className="counter-value">
-        <span ref={counterRef}>0</span>
+        <span ref={counterRef}>0</span>{suffix}
       </div>
       <div className="counter-label">{label}</div>
     </div>
@@ -152,8 +152,8 @@ export default function Home() {
       }}>
         <p style={{ color: 'white', fontWeight: 600, fontSize: 'clamp(0.9rem, 2vw, 1.05rem)', margin: 0, letterSpacing: '0.01em' }}>
           📞 For a <strong>Free Consultation</strong>, call us today:{' '}
-          <a href="tel:8329006561" style={{ color: 'white', textDecoration: 'underline', fontWeight: 800, letterSpacing: '0.05em' }}>
-            8329006561
+          <a href="tel:9763830668" style={{ color: 'white', textDecoration: 'underline', fontWeight: 800, letterSpacing: '0.05em' }}>
+            9763830668
           </a>
         </p>
       </section>
@@ -203,11 +203,11 @@ export default function Home() {
       {/* Animated Stats Counter Section */}
       <section className="section counter-section" style={{ background: 'rgba(255,255,255,0.5)', backdropFilter: 'blur(8px)', paddingTop: '3rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(150px, 100%), 1fr))', gap: '1rem' }} className="stagger-children">
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '6rem' }} className="stagger-children">
             <CounterCard end={15} label="Years of Experience" icon={Award} />
-            <CounterCard end={500} label="Projects Delivered" icon={Building2} />
-            <CounterCard end={1000} label="Lab Tests Conducted" icon={FlaskConical} />
-            <CounterCard end={200} label="Happy Clients" icon={Users} />
+            <CounterCard end={60} label="Projects Delivered" icon={Building2} />
+            {false && <CounterCard end={1000} label="Lab Tests Conducted" icon={FlaskConical} />}
+            {false && <CounterCard end={200} label="Happy Clients" icon={Users} />}
           </div>
         </div>
       </section>
@@ -250,74 +250,76 @@ export default function Home() {
       </section>
 
       {/* Leadership Preview Section */}
-      <section className="section" style={{ background: 'var(--color-surface)', position: 'relative', overflow: 'hidden' }}>
-        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <h2 className="h2 reveal" style={{ textAlign: 'center', marginBottom: '1rem' }}>Our <span className="text-gradient">Leadership</span></h2>
-          <p className="text-muted reveal" style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: '600px', margin: '0 auto 4rem' }}>
-            Meet the experts driving transformation through science and sustainability.
-          </p>
+      {false && (
+        <section className="section" style={{ background: 'var(--color-surface)', position: 'relative', overflow: 'hidden' }}>
+          <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+            <h2 className="h2 reveal" style={{ textAlign: 'center', marginBottom: '1rem' }}>Our <span className="text-gradient">Leadership</span></h2>
+            <p className="text-muted reveal" style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: '600px', margin: '0 auto 4rem' }}>
+              Meet the experts driving transformation through science and sustainability.
+            </p>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }} className="stagger-children">
-            {[
-              { name: 'Dr. Ram Konale', role: 'Director- Technical and Compliance', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&h=300&auto=format&fit=crop', linkedin: '#' },
-              { name: 'Mr. Shreyash Thorat', role: 'Director- Business Growth & Strategy', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&h=300&auto=format&fit=crop', linkedin: '#' }
-            ].map((member, i) => (
-              <div key={i} className="glow-card reveal-scale leadership-card" style={{ width: 'min(350px, 100%)' }}>
-                <div className="glow-card-inner card-border-animated" style={{ padding: '3.5rem 2.5rem', textAlign: 'center', height: '100%' }}>
-                  <div style={{
-                    width: '150px',
-                    height: '150px',
-                    borderRadius: '50%',
-                    margin: '0 auto 2rem',
-                    position: 'relative',
-                    padding: '5px',
-                    background: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))',
-                    boxShadow: 'var(--shadow-xl)',
-                  }}>
-                    <div style={{ width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', border: '4px solid white' }}>
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
-                        className="leadership-img"
-                      />
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }} className="stagger-children">
+              {[
+                { name: 'Dr. Ram Konale', role: 'Director- Technical and Compliance', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&h=300&auto=format&fit=crop', linkedin: '#' },
+                { name: 'Mr. Shreyash Thorat', role: 'Director- Business Growth & Strategy', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&h=300&auto=format&fit=crop', linkedin: '#' }
+              ].map((member, i) => (
+                <div key={i} className="glow-card reveal-scale leadership-card" style={{ width: 'min(350px, 100%)' }}>
+                  <div className="glow-card-inner card-border-animated" style={{ padding: '3.5rem 2.5rem', textAlign: 'center', height: '100%' }}>
+                    <div style={{
+                      width: '150px',
+                      height: '150px',
+                      borderRadius: '50%',
+                      margin: '0 auto 2rem',
+                      position: 'relative',
+                      padding: '5px',
+                      background: 'linear-gradient(135deg, var(--color-primary), var(--color-secondary))',
+                      boxShadow: 'var(--shadow-xl)',
+                    }}>
+                      <div style={{ width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', border: '4px solid white' }}>
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                          className="leadership-img"
+                        />
+                      </div>
                     </div>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--color-text)' }}>{member.name}</h3>
+                    <p style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '0.95rem', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{member.role}</p>
+
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      color: '#0A66C2',
+                      fontWeight: 600,
+                      fontSize: '0.95rem',
+                      transition: 'all 0.3s ease',
+                      padding: '0.6rem 1.2rem',
+                      borderRadius: 'var(--radius-full)',
+                      background: 'rgba(10, 102, 194, 0.08)',
+                      border: '1px solid rgba(10, 102, 194, 0.1)'
+                    }} className="hover-lift">
+                      <Linkedin size={18} />
+                      Connect
+                    </a>
                   </div>
-                  <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--color-text)' }}>{member.name}</h3>
-                  <p style={{ color: 'var(--color-primary)', fontWeight: 600, fontSize: '0.95rem', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{member.role}</p>
-
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    color: '#0A66C2',
-                    fontWeight: 600,
-                    fontSize: '0.95rem',
-                    transition: 'all 0.3s ease',
-                    padding: '0.6rem 1.2rem',
-                    borderRadius: 'var(--radius-full)',
-                    background: 'rgba(10, 102, 194, 0.08)',
-                    border: '1px solid rgba(10, 102, 194, 0.1)'
-                  }} className="hover-lift">
-                    <Linkedin size={18} />
-                    Connect
-                  </a>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <style>{`
+            <style>{`
             .leadership-card:hover .leadership-img {
               transform: scale(1.1);
             }
           `}</style>
 
-          <div className="reveal" style={{ textAlign: 'center', marginTop: '3.5rem' }}>
-            <Link to="/about#team" className="btn btn-outline" style={{ fontSize: '1.05rem', padding: '0.8rem 2rem' }}>Meet the Full Team</Link>
+            <div className="reveal" style={{ textAlign: 'center', marginTop: '3.5rem' }}>
+              <Link to="/about#team" className="btn btn-outline" style={{ fontSize: '1.05rem', padding: '0.8rem 2rem' }}>Meet the Full Team</Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Brochure Download Section */}
       <section className="section" style={{ background: 'linear-gradient(135deg, var(--color-primary), var(--color-primary-dark))', color: 'white', position: 'relative', overflow: 'hidden' }}>

@@ -205,6 +205,7 @@ export default function About() {
         </div>
 
         {/* Meet Our Team */}
+        {false && (
         <div style={{ marginBottom: '5rem' }} id="team">
           <h2 className="h2 reveal" style={{ textAlign: 'center', marginBottom: '1rem' }}>
             Meet Our <span className="text-gradient">Leadership Team</span>
@@ -286,6 +287,7 @@ export default function About() {
             }
           `}</style>
         </div>
+        )}
 
         {/* Trust Badges */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '4rem' }}>
