@@ -24,7 +24,7 @@ export default function Footer() {
           <h3 style={{ marginBottom: '1rem' }}>Contact</h3>
           <p style={{ opacity: 0.7, marginBottom: '0.5rem' }}>Head Office: Pimpari Chinchwad, Pune- 411027</p>
           <p style={{ opacity: 0.7, marginBottom: '0.5rem' }}>+91 91120 06989</p>
-          <p style={{ opacity: 0.7, marginBottom: '0.5rem' }}>+91 9763830668</p>
+          <p style={{ opacity: 0.7, marginBottom: '0.5rem' }}>+91 8329006561</p>
           <p style={{ opacity: 0.7 }}>info@sarvamenviro.com</p>
         </div>
         <div>

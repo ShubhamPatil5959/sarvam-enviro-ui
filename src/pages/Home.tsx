@@ -152,8 +152,8 @@ export default function Home() {
       }}>
         <p style={{ color: 'white', fontWeight: 600, fontSize: 'clamp(0.9rem, 2vw, 1.05rem)', margin: 0, letterSpacing: '0.01em' }}>
           📞 For a <strong>Free Consultation</strong>, call us today:{' '}
-          <a href="tel:9763830668" style={{ color: 'white', textDecoration: 'underline', fontWeight: 800, letterSpacing: '0.05em' }}>
-            9763830668
+          <a href="tel:8329006561" style={{ color: 'white', textDecoration: 'underline', fontWeight: 800, letterSpacing: '0.05em' }}>
+            8329006561
           </a>
         </p>
       </section>

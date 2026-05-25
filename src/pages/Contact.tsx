@@ -22,7 +22,7 @@ export default function Contact() {
       info: (
         <>
           +91 91120 06989<br />
-          +91 9763830668
+          +91 8329006561
         </>
       ),
       color: 'var(--color-secondary)',
