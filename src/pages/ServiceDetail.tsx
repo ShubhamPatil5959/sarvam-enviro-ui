@@ -219,56 +219,40 @@ export default function ServiceDetail() {
             }
 
             .tree-wrapper::before {
-              left: 20px;
-              transform: none;
+              display: none;
             }
             .tree-parent-node {
-              padding: 1.25rem 2rem;
+              padding: 1.25rem 1.5rem;
               font-size: 1.25rem;
-              margin-bottom: 3rem;
-              width: calc(100% - 40px);
-              margin-left: 20px;
-              text-align: left;
+              margin-bottom: 2rem;
+              width: 100%;
+              margin-left: 0;
+              text-align: center;
+              border-radius: var(--radius-lg);
             }
             .tree-children-container {
-              gap: 2rem;
+              gap: 1.5rem;
             }
             .tree-child-wrapper, .tree-child-wrapper:nth-child(odd), .tree-child-wrapper:nth-child(even) {
               width: 100%;
-              align-self: flex-end;
-              justify-content: flex-start;
-              padding-left: 50px;
+              align-self: center;
+              justify-content: center;
+              padding-left: 0;
               padding-right: 0;
             }
-            .tree-child-wrapper::before {
-              left: 10px !important;
-              right: auto !important;
-              top: 40px;
-            }
-            .tree-child-wrapper::after {
-              left: 20px !important;
-              right: auto !important;
-              width: 30px;
-              top: 49px;
+            .tree-child-wrapper::before, .tree-child-wrapper::after {
+              display: none !important;
             }
             .tree-child-node {
               max-width: 100%;
             }
+            .service-detail-content-section {
+              padding: 1.25rem !important;
+            }
           }
 
           @media (max-width: 480px) {
-            .tree-child-wrapper {
-              padding-left: 40px;
-            }
-            .tree-child-wrapper::before {
-              width: 16px;
-              height: 16px;
-              left: 12px !important;
-            }
-            .tree-child-wrapper::after {
-              width: 20px;
-              left: 20px !important;
-            }
+            /* Mobile tweaks already handled above */
           }
         `}</style>
 
@@ -320,7 +304,7 @@ export default function ServiceDetail() {
                           }}
                         >
                           {/* Image Section */}
-                          <div style={{
+                          <div className="service-detail-image-section" style={{
                             width: '100%',
                             height: '200px',
                             backgroundColor: 'rgba(0,0,0,0.03)',
@@ -373,7 +357,7 @@ export default function ServiceDetail() {
                           </div>
 
                           {/* Content Section */}
-                          <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                          <div className="service-detail-content-section" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginBottom: '1rem' }}>
                               <CheckCircle2
                                 size={22}

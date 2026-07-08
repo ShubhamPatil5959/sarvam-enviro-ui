@@ -53,8 +53,8 @@ export default function Navbar() {
         borderBottom: scrolled ? 'none' : '1px solid rgba(255,255,255,0.2)'
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '70px' }}>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: '800', fontSize: '1.5rem', zIndex: 200, letterSpacing: '-0.02em' }}>
-            <img src="/SARVAM_LOGO.png" alt="Sarvam Enviro Logo" style={{ height: '65px', objectFit: 'contain', mixBlendMode: 'multiply' }} />
+          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.4rem, 1.5vw, 0.75rem)', fontWeight: '800', fontSize: 'clamp(1.2rem, 4vw, 1.5rem)', zIndex: 200, letterSpacing: '-0.02em' }}>
+            <img src="/SARVAM_LOGO.png" alt="Sarvam Enviro Logo" style={{ height: 'clamp(45px, 10vw, 65px)', objectFit: 'contain', mixBlendMode: 'multiply' }} />
             <div>
               <span style={{ color: 'var(--color-text)' }}>Sarvam</span> <span style={{ color: 'var(--color-primary-dark)' }}>Enviro</span>
             </div>
