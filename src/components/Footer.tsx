@@ -7,7 +7,7 @@ export default function Footer() {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
             <div style={{ background: 'white', padding: '0.25rem', borderRadius: '8px' }}>
-              <img src="/SARVAM_LOGO_PL.png" alt="Sarvam Enviro Logo" style={{ height: '120px', objectFit: 'contain' }} />
+              <img src="PNG FINAL LOGO.png" alt="Sarvam Enviro Logo" style={{ height: '120px', objectFit: 'contain' }} />
             </div>
           </div>
           <p style={{ opacity: 0.7, lineHeight: 1.8, marginBottom: '1.5rem' }}>Building a cleaner, greener, and sustainable future.</p>

@@ -1,4 +1,4 @@
-import { ClipboardCheck, Droplets, Microscope, Package, TrendingUp } from 'lucide-react';
+import { ClipboardCheck, Droplets, Microscope, Package } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface ServiceData {
@@ -56,20 +56,20 @@ export const services: ServiceData[] = [
   //   ],
   //   color: 'var(--color-primary)',
   // },
-  {
-    slug: 'carbon-sustainability',
-    icon: TrendingUp,
-    title: 'Encash your Carbon',
-    description: 'Convert your sustainability commitments into measurable financial value — through carbon project development, carbon credit lifecycle management, circular economy solutions, and IREC services.',
-    features: ['Carbon Project Development', 'Carbon Credit Management', 'Circular Economy & EPR', 'IREC Services'],
-    details: [
-      'Carbon Project Development: We design, develop, and implement high-integrity carbon credit projects across nature-based and technology-driven solutions. Includes Feasibility Studies & Baseline Assessment, Project Design & Methodology Selection, Regulatory Approvals & Government Liaisoning, and Community Engagement & Implementation.',
-      'Carbon Credit Management & Monetization: We provide end-to-end carbon credit lifecycle management, enabling organizations to transform sustainability initiatives into tradable financial assets. Includes Monitoring, Reporting & Verification (MRV), Certification & Issuance, Carbon Credit Trading & Sales Strategy, and Global Buyer Access.',
-      'Circular Economy & Environmental Compliance: We help organizations navigate complex environmental regulations while unlocking value through circular economy solutions. Includes Plastic Credit Solutions and Extended Producer Responsibility (EPR) Advisory & Trading.',
-      'Renewable Energy Certificate (IREC) Services: We support renewable energy producers and organizations in registering and trading International Renewable Energy Certificates (IRECs). Includes IREC Registration & Documentation, Compliance & Verification Support, and IREC Trading & Monetization.'
-    ],
-    color: 'var(--color-primary)',
-  },
+  // {
+  //   slug: 'carbon-sustainability',
+  //   icon: TrendingUp,
+  //   title: 'Encash your Carbon',
+  //   description: 'Convert your sustainability commitments into measurable financial value — through carbon project development, carbon credit lifecycle management, circular economy solutions, and IREC services.',
+  //   features: ['Carbon Project Development', 'Carbon Credit Management', 'Circular Economy & EPR', 'IREC Services'],
+  //   details: [
+  //     'Carbon Project Development: We design, develop, and implement high-integrity carbon credit projects across nature-based and technology-driven solutions. Includes Feasibility Studies & Baseline Assessment, Project Design & Methodology Selection, Regulatory Approvals & Government Liaisoning, and Community Engagement & Implementation.',
+  //     'Carbon Credit Management & Monetization: We provide end-to-end carbon credit lifecycle management, enabling organizations to transform sustainability initiatives into tradable financial assets. Includes Monitoring, Reporting & Verification (MRV), Certification & Issuance, Carbon Credit Trading & Sales Strategy, and Global Buyer Access.',
+  //     'Circular Economy & Environmental Compliance: We help organizations navigate complex environmental regulations while unlocking value through circular economy solutions. Includes Plastic Credit Solutions and Extended Producer Responsibility (EPR) Advisory & Trading.',
+  //     'Renewable Energy Certificate (IREC) Services: We support renewable energy producers and organizations in registering and trading International Renewable Energy Certificates (IRECs). Includes IREC Registration & Documentation, Compliance & Verification Support, and IREC Trading & Monetization.'
+  //   ],
+  //   color: 'var(--color-primary)',
+  // },
   {
     slug: 'environmental-monitoring',
     icon: Microscope,
