@@ -217,15 +217,15 @@ export default function About() {
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem', maxWidth: '1000px', margin: '0 auto' }} className="stagger-children">
             {[
               {
-                name: 'Dr. Ram Konale',
-                role: 'Director- Technical and Compliance',
+                name: 'Dr. Ram Konale, Ph.D.',
+                role: 'Founder & CTO',
                 bio: 'A visionary leader with extensive experience in driving sustainable environmental solutions and corporate strategy.',
                 linkedin: '#',
                 image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&h=300&auto=format&fit=crop'
               },
               {
                 name: 'Mr. Shreyash Thorat',
-                role: 'Director- Business Growth & Strategy',
+                role: 'Director & Chief Growth & Strategy Officer',
                 bio: 'An esteemed expert providing strategic guidance on advanced environmental technologies and regulatory compliance frameworks.',
                 linkedin: '#',
                 image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&h=300&auto=format&fit=crop'

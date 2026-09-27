@@ -46,8 +46,8 @@ export default function Contact() {
       title: 'Key Contacts',
       info: (
         <>
-          <strong>Dr. Ram Konale</strong> (Director)<br />
-          <strong>Mr. Shreyash Thorat</strong> (Director)
+          <strong>Dr. Ram Konale, Ph.D.</strong> (Founder & CTO)<br />
+          <strong>Mr. Shreyash Thorat</strong> (Director & Chief Growth & Strategy Officer)
         </>
       ),
       color: 'var(--color-secondary)',

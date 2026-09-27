@@ -44,18 +44,18 @@ export const services: ServiceData[] = [
     ],
     color: 'var(--color-primary)',
   },
-  {
-    slug: 'esg-sustainability',
-    icon: Leaf,
-    title: 'ESG & Sustainability Services',
-    description: 'Comprehensive ESG and sustainability solutions — from GHG accounting, gap analysis, and materiality assessments to BRSR/GRI reporting, net-zero strategy, and regulatory compliance integration.',
-    features: ['ESG Assessment & Gap Analysis', 'GHG Accounting (Scope 1, 2, 3)', 'Net Zero & Decarbonization', 'BRSR / GRI Reporting'],
-    details: [
-      'Assessment: We begin by evaluating your current environmental and sustainability performance to identify gaps, risks, and opportunities for improvement. Includes ESG Assessment & Gap Analysis, GHG Emissions Assessment, Resource & Energy Efficiency Analysis, Regulatory Compliance Review, and Materiality Assessment.',
-      'Reporting & Strategy: We support organizations in developing robust sustainability frameworks and reports aligned with global standards and regulatory requirements. Includes ESG Strategy & Framework Development, Sustainability Reporting (BRSR, GRI, etc.), Net Zero & Decarbonization Strategy, Policy Development & Implementation, and Environmental Compliance Integration.'
-    ],
-    color: 'var(--color-primary)',
-  },
+  // {
+  //   slug: 'esg-sustainability',
+  //   icon: Leaf,
+  //   title: 'ESG & Sustainability Services',
+  //   description: 'Comprehensive ESG and sustainability solutions — from GHG accounting, gap analysis, and materiality assessments to BRSR/GRI reporting, net-zero strategy, and regulatory compliance integration.',
+  //   features: ['ESG Assessment & Gap Analysis', 'GHG Accounting (Scope 1, 2, 3)', 'Net Zero & Decarbonization', 'BRSR / GRI Reporting'],
+  //   details: [
+  //     'Assessment: We begin by evaluating your current environmental and sustainability performance to identify gaps, risks, and opportunities for improvement. Includes ESG Assessment & Gap Analysis, GHG Emissions Assessment, Resource & Energy Efficiency Analysis, Regulatory Compliance Review, and Materiality Assessment.',
+  //     'Reporting & Strategy: We support organizations in developing robust sustainability frameworks and reports aligned with global standards and regulatory requirements. Includes ESG Strategy & Framework Development, Sustainability Reporting (BRSR, GRI, etc.), Net Zero & Decarbonization Strategy, Policy Development & Implementation, and Environmental Compliance Integration.'
+  //   ],
+  //   color: 'var(--color-primary)',
+  // },
   {
     slug: 'carbon-sustainability',
     icon: TrendingUp,

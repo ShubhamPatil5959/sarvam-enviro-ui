@@ -260,8 +260,8 @@ export default function Home() {
 
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem' }} className="stagger-children">
               {[
-                { name: 'Dr. Ram Konale', role: 'Director- Technical and Compliance', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&h=300&auto=format&fit=crop', linkedin: '#' },
-                { name: 'Mr. Shreyash Thorat', role: 'Director- Business Growth & Strategy', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&h=300&auto=format&fit=crop', linkedin: '#' }
+                { name: 'Dr. Ram Konale, Ph.D.', role: 'Founder & CTO', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&h=300&auto=format&fit=crop', linkedin: '#' },
+                { name: 'Mr. Shreyash Thorat', role: 'Director & Chief Growth & Strategy Officer', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&h=300&auto=format&fit=crop', linkedin: '#' }
               ].map((member, i) => (
                 <div key={i} className="glow-card reveal-scale leadership-card" style={{ width: 'min(350px, 100%)' }}>
                   <div className="glow-card-inner card-border-animated" style={{ padding: '3.5rem 2.5rem', textAlign: 'center', height: '100%' }}>
