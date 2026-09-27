@@ -1,4 +1,4 @@
-import { ClipboardCheck, Droplets, Leaf, Microscope, Package, TrendingUp } from 'lucide-react';
+import { ClipboardCheck, Droplets, Microscope, Package, TrendingUp } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface ServiceData {
