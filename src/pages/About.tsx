@@ -64,7 +64,7 @@ export default function About() {
           About <span className="text-gradient">Sarvam Enviro</span>
         </h1>
         <p className="text-muted animate-blur-in delay-200" style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: '650px', margin: '0 auto 4rem', fontSize: '1.25rem', fontWeight: 500, color: 'var(--color-primary)' }}>
-          "Synergy for Green Future"
+          "Engineering a Water Positive India."
         </p>
 
         {/* Who We Are */}

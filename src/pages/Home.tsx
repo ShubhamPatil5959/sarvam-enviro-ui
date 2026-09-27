@@ -22,7 +22,7 @@ function CounterCard({ end, label, icon: Icon, suffix = '+' }: { end: number; la
 
 export default function Home() {
   const scrollRef = useScrollReveal();
-  const typewriterRef = useTypewriter('Synergy for Green Future.', 70);
+  const typewriterRef = useTypewriter('Engineering a Water Positive India.', 70);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [currentHero, setCurrentHero] = useState(0);
 
@@ -134,8 +134,11 @@ export default function Home() {
               animation: 'backgroundPan 4s linear infinite'
             }}></span>
           </h1>
+              <p className="h3 animate-blur-in delay-200" style={{ marginBottom: '1 rem', maxWidth: '800px', margin: '0 auto 1rem', color: 'rgba(255,255,255,0.9)', fontWeight: 400, fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)' }}>
+           TURNKEY WATER & WASTEWATER ENGINEERING
+          </p>
           <p className="h3 animate-blur-in delay-200" style={{ marginBottom: '2.5rem', maxWidth: '800px', margin: '0 auto 2.5rem', color: 'rgba(255,255,255,0.9)', fontWeight: 400, fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)' }}>
-            Comprehensive environmental management and sustainability solutions for industries across India.
+            We deliver end-to-end wastewater treatment, zero liquid discharge, and aquifer replenishment solutions for modern Indian industry.
           </p>
           <div className="animate-blur-in delay-400" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
             <Link to="/services" className="btn btn-primary btn-ripple hover-lift" style={{ fontSize: '1.1rem', padding: '1rem 2rem' }}>Our Services</Link>
